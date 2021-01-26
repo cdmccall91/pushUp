@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Push Up App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/2741837670.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Push Ups</title>
 </head>
 <body>
-    
-    <script src="app.js"></script>
+  <div id="container">
+    <button id="start-new-day">Start New Day</button>
+    <div class="day">
+      
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-container" id="modal">
+    <div class="modal">
+      <button class="close-btn" id="close">
+        <i class="fa fa-times"></i>
+      </button>
+      <div class="modal-header">
+        <h3>Enter Today's Date</h3>
+      </div>
+      <div class="modal-content">
+        <form class="modal-form">
+          <div>
+            <input type="text" id="date" placeholder="Enter Date">
+            <input type="submit" value="Push It!" id="submit-btn">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
 </body>
 </html>

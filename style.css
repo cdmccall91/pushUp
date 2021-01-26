@@ -1,3 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Acme', sans-serif;
+}
+
+:root {
+  --green-color: #54e346;
+  --white-color: #fff;
+}
+
+body {
+  background-color: var(--green-color);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#start-new-day {
+  cursor: pointer;
+  padding: 20px;
+  background-color: var(--white-color);
+  color: var(--green-color);
+  border: solid 2px var(--green-color);
+  outline: 0;
+  border-radius: 5px;
+  font-size: 25px;
+}
+
+#container {
+  min-height: 100vh;
+  width: 70%;
+  background-color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MODAL STYLING */
+.modal-container {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal-container.show-modal {
+  display: block;
+}
+
+.modal {
+  background-color: var(--white-color);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  width: 400px;
+}
+
+.modal-header {
+  background: var(--green-color);
+  color: #fff;
+  padding: 15px;
+}
+
+.modal-header h3 {
+  margin: 0;
+}
+
+.modal-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.modal-form input {
+  padding: 8px;
+  width: 25%;
+  border-radius: 8px;
+}
+
+#submit-btn {
+  background-color: var(--green-color);
+  color: var(--white-color);
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.close-btn {
+  background: transparent;
+  color: #fff;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* NEW DAY STYLING */
+.day-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: var(--green-color);
+  margin-top: 20px;
+  min-width: 400px;
+  min-height: 300px;
+  border-radius: 8px;
+}
+
+.date-title {
+  position: absolute;
+  top: 0;
+  color: var(--white-color);
+}
+
+.new-set {
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: var(--white-color);
+  color: var(--green-color);
+  font-weight: 900;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+}
+
+.submit-rep {
+  padding: 0;
+  outline: 0;
+  border: solid var(--white-color) 2px;
+  color:var(--white-color);
+  background: transparent;
+  margin-left: 5px;
+  padding: 5px;
+}
+
+.rep-input {
+  text-align: center;
+  border: 0;
+  width: 70px;
+  padding: 5px;
+}
+
+li {
+  color: var(--white-color);
+  list-style-type: none;
+}
+
+
+
+
+
+/* Gets ride of arrows on number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+input[type="number"] {
+   -moz-appearance: textfield;
+}
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 80%;
+  }
 }
