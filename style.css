@@ -6,12 +6,12 @@
 }
 
 :root {
+  --modal-duration: 1s;
   --green-color: #54e346;
   --white-color: #fff;
 }
 
 body {
-  background-color: var(--green-color);
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -19,28 +19,91 @@ body {
   align-items: center;
 }
 
-#start-new-day {
-  cursor: pointer;
-  padding: 20px;
-  background-color: var(--white-color);
-  color: var(--green-color);
-  border: solid 2px var(--green-color);
+button {
   outline: 0;
+  border: solid white 8px;
+  color: white;
   border-radius: 5px;
-  font-size: 25px;
 }
 
-#container {
+li {
+  list-style-type: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.hide {
+  display: none !important;
+}
+
+.container {
+  background-color: var(--green-color);
   min-height: 100vh;
   width: 70%;
-  background-color: var(--white-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-/* MODAL STYLING */
+#new-day-btn {
+  cursor: pointer;
+  color: var(--white-color);
+  background-color: var(--green-color);
+  padding: 10px;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.day-grid {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* Day Card Styling */
+.day-card {
+  position: relative;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.new-set-btn {
+  background-color: var(--green-color);
+  padding: 5px;
+  font-size: 16px;
+  width: 50%;
+}
+
+.set-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.set-grid input {
+  width: 75px;
+  text-align: center;
+}
+
+.set-grid button {
+  color: var(--white-color);
+  background-color: var(--green-color);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Modal Styling */
 .modal-container {
   display: none;
   background-color: rgba(0, 0, 0, 0.6);
@@ -51,7 +114,7 @@ body {
   bottom: 0;
 }
 
-.modal-container.show-modal {
+.modal-container.show {
   display: block;
 }
 
@@ -65,7 +128,9 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 100%;
-  width: 400px;
+  width: 350px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
 }
 
 .modal-header {
@@ -112,16 +177,25 @@ body {
   right: 0;
 }
 
-/* NEW DAY STYLING */
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* New Day Styling */
 .day-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
   position: relative;
-  background-color: var(--green-color);
+  background-color: var(--white-color);
   margin-top: 20px;
-  min-width: 400px;
+  width: 600px;
+  max-width: 100%;
   min-height: 300px;
   border-radius: 8px;
 }
@@ -130,64 +204,33 @@ body {
   position: absolute;
   top: 0;
   color: var(--white-color);
-}
-
-.new-set {
-  outline: 0;
-  border: 0;
+  background-color: var(--green-color);
   border-radius: 5px;
-  padding: 10px;
-  background-color: var(--white-color);
-  color: var(--green-color);
-  font-weight: 900;
-  cursor: pointer;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 10px;
-}
-
-.submit-rep {
-  padding: 0;
-  outline: 0;
-  border: solid var(--white-color) 2px;
-  color:var(--white-color);
-  background: transparent;
-  margin-left: 5px;
-  padding: 5px;
-}
-
-.rep-input {
-  text-align: center;
-  border: 0;
-  width: 70px;
-  padding: 5px;
-}
-
-li {
-  color: var(--white-color);
-  list-style-type: none;
+  padding: 8px;
+  font-size: 16px;
 }
 
 
 
 
 
-/* Gets ride of arrows on number input */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-   -webkit-appearance: none;
-   margin: 0;
-}
-input[type="number"] {
-   -moz-appearance: textfield;
-}
 
-
-
-
-
-@media only screen and (max-width: 600px) {
-  .container {
-    width: 80%;
+/* Media Queries */
+@media only screen and (min-width: 600px) and (max-width: 880px) {
+  .day-card {
+    width: 400px
   }
 }
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+
+  .day-card {
+    width: 320px;
+  }
+}
+
+
