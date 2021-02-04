@@ -265,6 +265,17 @@ input:focus {
   right: 0;
 }
 
+#push-it {
+  background-color: var(--green-color);
+  color: var(--white-color);
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 16px;
+}
+
 @keyframes modalopen {
   from {
     opacity: 0;
