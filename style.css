@@ -42,10 +42,12 @@ input:focus {
   display: none !important;
 }
 
+
+
 #container {
   background-color: var(--green-color);
-  min-height: 100vh;
   width: 70%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,13 +76,16 @@ input:focus {
   display: block;
 }
 
+#icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
 #history-btn {
   cursor: pointer;
   color: var(--white-color);
-  background-color: var(--green-color);
-  padding: 10px;
-  font-size: 16px;
-  margin-top: 100px;
 }
 
 /* Day Card Styling */
@@ -148,13 +153,13 @@ input:focus {
   text-align: center;
   line-height: 50px;
   font-size: 12px;
-  width: 45%;
-  height: 55%;
+  width: 60px;
+  line-height: 15px;
 }
 
 #submit-rep-btn {
   width: 60px;
-  padding: 3px;
+  padding: 5px;
   background-color: var(--green-color);
   border-radius: 5px;
 }
@@ -242,17 +247,6 @@ input:focus {
   border-radius: 8px;
 }
 
-#submit-btn {
-  background-color: var(--green-color);
-  color: var(--white-color);
-  cursor: pointer;
-  outline: 0;
-  border: 0;
-  border-radius: 5px;
-  padding: 8px;
-  font-size: 16px;
-}
-
 .close-btn {
   background: transparent;
   color: #fff;
@@ -274,6 +268,7 @@ input:focus {
   border-radius: 5px;
   padding: 8px;
   font-size: 16px;
+  -webkit-appearance: none;
 }
 
 @keyframes modalopen {
