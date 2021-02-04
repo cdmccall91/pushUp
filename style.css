@@ -3,6 +3,7 @@
 * {
   box-sizing: border-box;
   font-family: 'Acme', sans-serif;
+  -webkit-overflow-scrolling: touch;
 }
 
 :root {
@@ -246,7 +247,7 @@ input:focus {
 }
 
 .modal-form input {
-  padding: 8px;
+  padding: 5px;
   width: 25%;
   border-radius: 8px;
 }
@@ -270,7 +271,7 @@ input:focus {
   outline: 0;
   border: 0;
   border-radius: 5px;
-  padding: 8px;
+  padding: 5px;
   font-size: 16px;
   -webkit-appearance: none !important;
 }
