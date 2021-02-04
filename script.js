@@ -23,6 +23,7 @@ let dates = [];
 // Function creates a new 'day card'
 function startNewDay(e) {
   modal.classList.remove('show');
+  dayCard.classList.add('show');
   e.preventDefault();
   const dateInput = document.getElementById('date-input').value;
   date.textContent = dateInput;

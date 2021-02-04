@@ -42,8 +42,6 @@ input:focus {
   display: none !important;
 }
 
-
-
 #container {
   background-color: var(--green-color);
   width: 70%;
@@ -90,7 +88,7 @@ input:focus {
 
 /* Day Card Styling */
 #day-card {
-  display: grid;
+  display: none;
   position: relative;
   background-color: var(--white-color);
   margin-top: 20px;
@@ -98,6 +96,10 @@ input:focus {
   max-width: 100%;
   min-height: 300px;
   border-radius: 8px;
+}
+
+#day-card.show {
+  display: grid;
 }
 
 #card-header {
@@ -150,6 +152,7 @@ input:focus {
 
 
 #rep-input {
+  -webkit-appearance: none;
   text-align: center;
   line-height: 50px;
   font-size: 12px;
@@ -158,6 +161,7 @@ input:focus {
 }
 
 #submit-rep-btn {
+  -webkit-appearance: none;
   width: 60px;
   padding: 5px;
   background-color: var(--green-color);
@@ -268,7 +272,7 @@ input:focus {
   border-radius: 5px;
   padding: 8px;
   font-size: 16px;
-  -webkit-appearance: none;
+  -webkit-appearance: none !important;
 }
 
 @keyframes modalopen {
