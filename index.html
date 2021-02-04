@@ -5,16 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/2741837670.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
-  <title>Push Ups</title>
+  <title>Document</title>
 </head>
 <body>
-  <div class="container">
+  <div id="container">
     <button id="new-day-btn">Start New Day</button>
-    <div class="day-grid">
+    <button id="log-day-btn">Log Day!</button>
+    <div id="day-card">
+      <div id="card-header">
+        <span id="date"></span>
+        <span>Total: <span id="total">0</span></span>
+      </div>
+      <div id="set-grid">
+      </div>
+      <div id="card-footer">
+        <div id="rep-input-container">
+          <input id="rep-input" type="number" placeholder="Enter Reps">
+          <button id="submit-rep-btn">Nice!</button>
+        </div>
+        <button id="new-set-btn">Start New Set</button>
+      </div>
     </div>
+    <a href="#day-grid-section"><button id="history-btn">View History</button></a>
   </div>
+  <section id="day-grid-section">
+  <div id="day-grid"></div>
+</section>
 
-
+  <!-- Modal -->
   <div class="modal-container" id="modal">
     <div class="modal">
       <button class="close-btn" id="close">
@@ -26,16 +44,14 @@
       <div class="modal-content">
         <form class="modal-form">
           <div>
-            <input type="text" id="date" placeholder="Enter Date">
-            <input type="submit" value="Push It!" id="submit-btn">
+            <input type="text" id="date-input" placeholder="Enter Date">
+            <input type="submit" value="Push It!" id="push-it">
           </div>
         </form>
       </div>
     </div>
-  </div>
-
-  <script src="app.js"></script>
+    </div>
+  
+  <script src="script.js"></script>
 </body>
 </html>
-
-

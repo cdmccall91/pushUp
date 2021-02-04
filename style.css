@@ -11,6 +11,10 @@
   --white-color: #fff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -38,7 +42,7 @@ input:focus {
   display: none !important;
 }
 
-.container {
+#container {
   background-color: var(--green-color);
   min-height: 100vh;
   width: 70%;
@@ -57,50 +61,134 @@ input:focus {
   font-weight: bolder;
 }
 
-.day-grid {
-  display: flex;
-  flex-direction: column-reverse;
+#log-day-btn {
+  display: none;
+  cursor: pointer;
+  color: var(--white-color);
+  background-color: var(--green-color);
+  padding: 10px;
+  font-size: 24px;
+}
+
+#log-day-btn.show {
+  display: block;
+}
+
+#history-btn {
+  cursor: pointer;
+  color: var(--white-color);
+  background-color: var(--green-color);
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 100px;
 }
 
 /* Day Card Styling */
-.day-card {
+#day-card {
+  display: grid;
   position: relative;
+  background-color: var(--white-color);
+  margin-top: 20px;
+  width: 600px;
+  max-width: 100%;
+  min-height: 300px;
+  border-radius: 8px;
 }
 
-.card-header {
+#card-header {
   display: flex;
   justify-content: space-between;
   padding: 5px;
 }
 
-.card-footer {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.new-set-btn {
-  background-color: var(--green-color);
-  padding: 5px;
-  font-size: 16px;
-  width: 50%;
-}
-
-.set-grid {
-  display: flex;
-  justify-content: center;
-}
-
-.set-grid input {
-  width: 75px;
+#card-header span {
   text-align: center;
-}
-
-.set-grid button {
+  height: fit-content;
+  padding: 6px;
+  border-radius: 8px;
   color: var(--white-color);
   background-color: var(--green-color);
-  padding: 5px;
+}
+
+#set-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.new-set-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0;
+  text-align: center;
+  min-width: 80px;
+  min-height: 50px;
+  margin: 5px;
+  color: var(--white-color);
+  background-color: var(--green-color);
+  border-radius: 8px;
+}
+
+#card-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#rep-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#rep-input {
+  text-align: center;
+  line-height: 50px;
+  font-size: 12px;
+  width: 45%;
+  height: 55%;
+}
+
+#submit-rep-btn {
+  width: 60px;
+  padding: 3px;
+  background-color: var(--green-color);
   border-radius: 5px;
+}
+
+#new-set-btn {
+  background-color: var(--green-color);
+  font-size: 16px;
+  width: 50%;
+  margin-top: -8px;
+}
+
+/* Day grid styling */
+#day-grid-section {
+  min-height: 100vh;
+}
+
+#day-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+}
+
+#day-grid div {
+  background-color: var(--green-color);
+  border: solid 5px var(--white-color);
+  color: var(--white-color);
+  font-size: 20px;
+  width: 125px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  text-align: center;
 }
 
 /* Modal Styling */
@@ -187,50 +275,36 @@ input:focus {
   }
 }
 
-
-/* New Day Styling */
-.day-card {
-  display: grid;
-  position: relative;
-  background-color: var(--white-color);
-  margin-top: 20px;
-  width: 600px;
-  max-width: 100%;
-  min-height: 300px;
-  border-radius: 8px;
-}
-
-.date-title {
-  position: absolute;
-  top: 0;
-  color: var(--white-color);
-  background-color: var(--green-color);
-  border-radius: 5px;
-  padding: 8px;
-  font-size: 16px;
-}
-
-
-
-
-
-
 /* Media Queries */
 @media only screen and (min-width: 600px) and (max-width: 880px) {
-  .day-card {
+  #day-card {
     width: 400px
   }
 }
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
-  .container {
+  #container {
     width: 90%;
   }
 
-  .day-card {
+  #day-card {
     width: 320px;
   }
 }
 
+
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
